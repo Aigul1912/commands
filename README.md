@@ -79,3 +79,32 @@ git show HEAD                   # показать текущий коммит
 git reset HEAD~1                # переместить HEAD на предыдущий коммит
 ```
 ---
+
+**_10. Статусы файлов_**
+```
+Рабочая директория → Индекс (Staging) → Репозиторий
+    (modified)        (staged)         (committed)
+```
+---
+Статусы файлов:
+Untracked - не отслеживается Git
+
+Modified - изменен, но не в индексе
+
+Staged - добавлен в индекс, готов к коммиту
+
+Committed - закоммичен в репозиторий
+
+```
+# Просмотр статусов
+git status
+git status -s                  # компактный вид
+
+# Изменение статусов
+git add <file>                 # untracked/modified → staged
+git commit                    # staged → committed
+git restore --staged <file>    # staged → modified
+git restore <file>             # modified → предыдущее состояние
+```
+---
+
